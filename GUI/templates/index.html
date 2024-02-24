@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Model Prediction</h1>
+        <form action="/predict" method="post">
+            <!-- Input fields for each feature -->
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <select class="form-control" id="age" name="Age">
+                    <option>25-30</option>
+                    <option>30-35</option>
+                    <option>35-40</option>
+                    <option>40-45</option>
+                    <option>45-50</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sad">Feeling sad or Tearful:</label>
+                <select class="form-control" id="sad" name='Feeling sad or Tearful'>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Sometimes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="irritable">Irritable towards baby & partner:</label>
+                <select class="form-control" id="irritable" name='Irritable towards baby & partner'>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Sometimes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sleep">Trouble sleeping at night:</label>
+                <select class="form-control" id="sleep" name='Trouble sleeping at night'>
+                    <option>Two or more days a week</option>
+                    <option>No</option>
+                    <option>Yes</option>
+                    <option>Sometimes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="decision">Problems concentrating or making decision:</label>
+                <select class="form-control" id="decision" name='Problems concentrating or making decision'>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Sometimes</option>
+                    <option>Often</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="eating">Overeating or loss of appetite:</label>
+                <select class="form-control" id="eating" name='Overeating or loss of appetite'>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Sometimes</option>
+                    <option>Not at all</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="guilt">Feeling of guilt:</label>
+                <select class="form-control" id="guilt" name='Feeling of guilt'>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Maybe</option>
+                    <option>Sometimes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bonding">Problems of bonding with baby:</label>
+                <select class="form-control" id="bonding" name='Problems of bonding with baby'>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Sometimes</option>
+                    <option>Not interested to say</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="suicide">Suicide attempt:</label>
+                <select class="form-control" id="suicide" name='Suicide attempt'>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Not interested to say</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-3">Predict</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

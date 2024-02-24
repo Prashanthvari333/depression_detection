@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Prediction Results</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px ;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        .prediction {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            background-color : #22fa22
+        }
+        .suggestions {
+            margin-bottom: 30px;
+        }
+        .joke {
+            padding: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background-color: #f8d7da;
+            margin-top: 30px;
+        }
+        .btn-back {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+            margin-top: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Model Prediction Results</h1>
+        
+        <!-- Prediction Section -->
+        <div class="prediction">
+            <!-- Display predicted depression stage here with emojis -->
+            {% if depression_stage == "Severe depression" %}
+                <p style="font-size: 30px;">Depression Stage: 😞 Severe depression</p>
+            {% elif depression_stage == "Moderate depression" %}
+                <p style="font-size: 30px;">Depression Stage: 😔 Moderate depression</p>
+            {% elif depression_stage == "Mild depression" %}
+                <p style="font-size: 30px;">Depression Stage: 🙂 Mild depression</p>
+            {% else %}
+                <p style="font-size: 30px;">Depression Stage: 😊 No depression</p>
+            {% endif %}
+        </div>
+        
+        <!-- Suggestions Section -->
+        <div class="suggestions">
+            <h2>Resources and Suggestions:</h2>
+            <ul>
+                {% for suggestion in suggestions %}
+                    <li><a href="{{ suggestion.url }}">{{ suggestion.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- Joke Section -->
+        <div class="joke">
+            <h2>Joke of the Day:</h2>
+            <p>{{ joke }}</p>
+        </div>
+        
+        <!-- Back Button -->
+        <a href="/" class="btn btn-primary btn-back">Back to Form</a>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
